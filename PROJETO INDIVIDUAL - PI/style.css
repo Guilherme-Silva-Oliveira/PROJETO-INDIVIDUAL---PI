@@ -36,12 +36,12 @@ header .container{
 }
 header .logo img{
     max-width: 230px;
-    margin-left: -100px;
+
 }
 section.itens-menu nav ul{
     display: flex;
     justify-content: space-between;
-    width: 500px;
+    width: 900px;
     list-style-type: none;
 }
 section.itens-menu nav ul li a{
@@ -343,6 +343,10 @@ section.personagens-principais h1{
     font-family: 'Cinzel', serif;
     margin-top: 40px;
     margin-bottom: 30px;
+}
+section.personagens-principais a{
+    text-decoration: none;
+    color: white;
 }
 section.personagens-principais .todos-card{
     display: block;
