@@ -1,0 +1,390 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+}
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+/* HEADER */
+header{
+    width: 100%;
+    padding: 50px 0;
+    position: fixed;
+    transition: 0.5s;
+    z-index: 9000;
+}
+header.rolar{
+    background-color: black;
+    padding: 30px 0;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.342);
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo img{
+    max-width: 230px;
+    margin-left: -100px;
+}
+section.itens-menu nav ul{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    list-style-type: none;
+}
+section.itens-menu nav ul li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    transition: 0.3s;
+}
+section.itens-menu nav ul li{
+    transition: 0.3s;
+}
+section.itens-menu nav ul li:hover{
+    transform: scale(1.09);
+}
+
+/* INTRODUÇÃO */
+section.introduction{
+    height: 98vh;
+    background-image: url('IMAGENS/abismo-logo.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+section.introduction .container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* ESTILO DE JOGO */
+section.estilo-jogo{
+    height: 90vh;
+    color: white;
+    padding: 40px;
+}
+section.estilo-jogo h1{
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+}
+section.estilo-jogo h2{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 28px;
+}
+.all-card{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.card{
+    border: 1px white solid;
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    transition: 0.3s;
+    padding: 20px;
+}
+.card img{
+    filter: invert(100%);
+    max-width: 200px;
+    margin-left: 30px;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+
+/* SOBRE */
+section.sobre{
+    height: 90vh;
+    background-image: url('IMAGENS/sutur-fundo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;    
+    padding: 70px 50px;
+    text-align: justify;
+}
+section.sobre h1{
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+}
+section.sobre .todos{
+    display: flex;
+    justify-content: space-between;
+    gap:40px
+}
+section.sobre .texto{
+    font-size: 36px;
+    align-items: center;
+    margin-top: 20px;
+}
+section.sobre .imagem img{
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px #2e5e9577;
+}
+
+/* RECEPÇÃO */
+section.recepcao{
+    height: 90vh;
+    color: white;
+    padding: 40px;
+}
+section.recepcao h1{
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+}
+section.recepcao h2{
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* REINOS */
+section.reinos{
+    height: auto;
+    color: white;
+    width: 100%;
+}
+section.reinos h1{
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+}
+.separador{
+    height: 5px;
+}
+section.reinos p{
+    font-size: 25px;
+}
+section.reinos .svartalfheim{
+    height: 60vh;
+    background-image: url('IMAGENS/minas.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;    
+    padding: 20px 50px;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
+}
+
+section.reinos .midgard{
+    height: 60vh;
+    background-image: url('IMAGENS/midgard.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;    
+    padding: 20px 50px;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
+}
+section.reinos .muspelheim{
+    height: 60vh;
+    background-image: url('IMAGENS/sutur-fundo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;    
+    padding: 20px 50px;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
+}
+section.reinos .niflheim{
+    height: 60vh;
+    background-image: url('IMAGENS/nilfheim.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;    
+    padding: 20px 50px;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
+}
+section.reinos .vanaheim{
+    height: 60vh;
+    background-image: url('IMAGENS/vanaheim.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;    
+    padding: 20px 50px;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
+}
+section.reinos .alfheim{
+    height: 60vh;
+    background-image: url('IMAGENS/alfheim.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;    
+    padding: 20px 50px;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
+}
+section.reinos .asgard{
+    height: 60vh;
+    background-image: url('IMAGENS/asgard.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;    
+    padding: 20px 50px;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
+}
+section.reinos .helheim{
+    height: 60vh;
+    background-image: url('IMAGENS/helheim.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;    
+    padding: 20px 50px;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
+}
+section.reinos .jotunheim{
+    height: 60vh;
+    background-image: url('IMAGENS/angrboda.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;    
+    padding: 20px 50px;
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
+}
+
+/* COMBATE */
+section.combate{
+    height: 90vh;
+    color: white;
+    padding: 40px;
+}
+section.combate h1{
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+}
+section.combate h2{
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* PERSONAGENS PRINCIPAIS */
+section.personagens-principais{
+    height: auto;
+    background-image: url('IMAGENS/fogo-fundo.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 0px;
+}
+section.personagens-principais h1{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+section.personagens-principais .todos-card{
+    display: block;
+}
+section.personagens-principais .todos-card .first-card{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+section.personagens-principais .todos-card .second-card{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+section.personagens-principais .card-psg{
+    border: 1px white solid;
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+section.personagens-principais .card-psg:hover{
+    transform: scale(1.05);
+}
+section.personagens-principais .card-psg img{
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+}
+section.personagens-principais .card-psg h1{
+    font-size: 40px;
+    margin-top: 20px;
+}
+/* FOOTER */
+footer{
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+footer span{
+    display: block;
+}
