@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <title>CADASTRO | USUÁRIO</title>
+    <link rel="stylesheet" href="css/style_login_cadastro.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <section class="itens-menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="login.html"><button>Logar</button></a></li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    </header>
+    <section class="skout">
+        <div class="container">
+            <div class="case">
+                <div class="part1">
+                <h1>CADASTRO</h1>
+                <label>Nome:</label>
+                <input type="text" id="ipt_nome_usuario">
+                <label>E-Mail:</label>
+                <input type="text" id="ipt_email_usuario">
+                <label>Senha:</label>
+                <input type="text" id="ipt_senha_usuario">
+
+                <label id="descer">Escolha sua Raça:</label>
+                <div class="escolhas">
+                    <div class="first">
+                        <input type="radio" name="radio_raca" class="input-change" value="humano"> Humano <br>
+                        <input type="radio" name="radio_raca" class="input-change" value="aesir"> Aesir <br>
+                        <input type="radio" name="radio_raca" class="input-change" value="vanir"> Vanir <br>
+                        <input type="radio" name="radio_raca" class="input-change" value="elfo_escuro"> Elfo Escuro <br>
+                    </div>
+                    <div class="second">
+                    <input type="radio" name="radio_raca" class="input-change" value="elfo_luz"> Elfo da Luz <br>
+                    <input type="radio" name="radio_raca" class="input-change" value="anao"> Anão <br>
+                    <input type="radio" name="radio_raca" class="input-change" value="gigante"> Gigante <br>
+                    <input type="radio" name="radio_raca" class="input-change" value="bestas"> Bestas <br>
+                </div>
+                </div>
+            </div>
+            <div class="part2">
+                <div class="image-user">
+                    <img src="" id="imageuser">
+                </div>
+                <h2><span>PERSONAGEM</span>FAVORITO</h2>
+                <select id="sel_personagem_favorito" onchange="mudarPerfil()">
+                    <option value="nada">Selecione uma Opção</option>
+                    <option value="kratos">Kratos</option>
+                    <option value="freya">Freya</option>
+                    <option value="atreus">Atreus</option>
+                    <option value="tyr">Týr</option>
+                    <option value="thor">Thor</option>
+                    <option value="odin">Odin</option>
+                    <option value="brok">Brok</option>
+                    <option value="sindri">Sindri</option>
+                    <option value="heimdall">Heimdall</option>
+                    <option value="fenrir">Fenrir</option>
+                    <option value="angrboda">Angrboda</option>
+                    <option value="thurd">Thúrd</option>
+                    <option value="jormungand">Jormungand</option>
+                    <option value="mimir">Mimir</option>
+                </select>
+                <button onclick="cadastrar()" class="btn-cadastrar">Cadastrar</button>
+            </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
