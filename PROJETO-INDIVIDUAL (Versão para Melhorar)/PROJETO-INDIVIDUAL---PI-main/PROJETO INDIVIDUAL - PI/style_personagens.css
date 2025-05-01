@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+}
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+/* HEADER */
+header{
+    width: 100%;
+    padding: 50px 0;
+    position: fixed;
+    transition: 0.5s;
+    z-index: 9000;
+}
+header.rolar{
+    background-color: black;
+    padding: 30px 0;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.342);
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo img{
+    max-width: 230px;
+
+}
+section.itens-menu nav ul{
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    list-style-type: none;
+}
+section.itens-menu nav ul li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    transition: 0.3s;
+}
+section.itens-menu nav ul li{
+    transition: 0.3s;
+}
+section.itens-menu nav ul li:hover{
+    transform: scale(1.09);
+}
+/* INTRODUÇÃO */
+section.introduction{
+    height: 98vh;
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+section.introduction .container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+section.introduction .text{
+    text-align: center;
+    font-size: 33px;
+}
+
+#kratos{
+    background-image: url('IMAGENS/kratos-imagem.jpg');
+}
+#odin{
+    background-image: url('IMAGENS/odin-imagem.jpg');
+}
+#thor{
+    background-image: url('IMAGENS/thor-imagem.jpg');
+}
+#tyr{
+    background-image: url('IMAGENS/tyr-imagem.jpg');
+}
+#atreus{
+    background-image: url('IMAGENS/atreus-imagem.jpg');
+}
+#freya{
+    background-image: url('IMAGENS/freya-imagem.jpg');
+}
+
+section.introduction h1{
+    font-size: 120px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+}
+
+/* DESCRIÇÃO */
+section.descricao {
+    color: white;
+    padding: 90px 0px;
+}
+section.descricao .container{
+    max-width: 1920px;
+    display: flex;
+}
+section.descricao h1{
+    font-size: 70px;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+}
+section.descricao p{
+    font-size: 35px;
+    text-align: justify;
+    width: 800px;
+}
+section.descricao img{
+    max-width: 700px;
+    margin-left: 60px;
+    border-radius: 10px;
+    opacity: 65%;
+}
+
+/* HISTÓRIA */
+section.historia{
+    color: white;
+    padding: 90px 0px;
+}
+section.historia .container{
+    max-width: 1920px;
+    display: flex;
+}
+section.historia h1{
+    font-size: 70px;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+}
+section.historia .card-historia .text{
+    display: flex;
+    padding: 80px 80px;
+}
+section.historia .card-historia p{
+    font-size: 30px;
+    text-align: justify;
+    margin-left: 60px;
+}
+.separador{
+    height: 5px;
+}
+/* HISTÓRIA KRATOS */
+#titulo{
+    text-align: center;
+}
+#pacto{
+    background-image: url('IMAGENS/esparta.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#recomeco{
+    background-image: url('IMAGENS/recomeco.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* HISTÓRIA ATREUS */
+#primeiro{
+    background-image: url('IMAGENS/fundo-atreus.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#segundo{
+    background-image: url('IMAGENS/fundo2-atreus.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* HISTÓRIA FREYA */
+#freya1{
+    background-image: url('IMAGENS/freya-fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#freya2{
+    background-image: url('IMAGENS/freya-fundo2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#freya3{
+    background-image: url('IMAGENS/freya-fundo3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* HISTÓRIA ODIN */
+#odin-fundo{
+    background-image: url('IMAGENS/odin-fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* HISTÓRIA THOR */
+#fundo-thor{
+    background-image: url('IMAGENS/fundo-thor.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* HISTÓRIA TYR */
+#fundo-tyr{
+    background-image: url('IMAGENS/fundo-tyr.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* FOOTER */
+footer{
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+footer span{
+    display: block;
+}
