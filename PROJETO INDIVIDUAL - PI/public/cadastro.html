@@ -77,9 +77,88 @@
                     <option value="mimir">Mimir</option>
                 </select>
                 <button onclick="cadastrar()" class="btn-cadastrar">Cadastrar</button>
+                <div id="mensagem_erro"></div>
             </div>
             </div>
         </div>
     </section>
 </body>
+<script>
+     function cadastrar() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = ipt_nome_usuario.value;
+    var emailVar = ipt_email_usuario.value;
+    var senhaVar = ipt_senha_usuario.value;
+    var favoritoVar = sel_personagem_favorito.value;
+
+    //Maneira para Recolher o valor de Raca
+    var racaRadios = document.getElementsByName("radio_raca");
+    var racaVar = "";
+    for (var i = 0; i < racaRadios.length; i++) {
+      if (racaRadios[i].checked) {
+        racaVar = racaRadios[i].value;
+        break;
+      }
+    }
+
+    if(nomeVar.length > 1 && emailVar.includes('@') && emailVar.includes('.') && senhaVar.length > 6){
+    // Validando Campos
+         // Verificando se há algum campo em branco
+         if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      racaVar == "" ||
+      favoritoVar == ""
+    ) {
+      return false;
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        racaServer: racaVar,
+        favoritoServer: favoritoVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso!";
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false; 
+    }else{
+        mensagem_erro.innerHTML =
+        "Preencha Todos os Campos";
+      alert('Insira os Dados Corretamente!!')
+    }
+    }
+</script>
 </html>

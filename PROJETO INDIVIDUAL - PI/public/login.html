@@ -36,6 +36,7 @@
                 <label>Senha:</label>
                 <input type="text" id="ipt_senha_usuario">
                 <button onclick="entrar()">Entrar</button>
+                <div id="messageerror"></div>
             </div>
             <div class="part2-login" >
                 <div class="image-user">
@@ -47,4 +48,66 @@
         </div>
     </section>
 </body>
+<script>
+      function entrar() {
+
+        var emailVar = ipt_email_usuario.value;
+        var senhaVar = ipt_senha_usuario.value;
+        messageerror.innerHTML = '';
+
+        if (emailVar == "" || senhaVar == "") {
+            messageerror.innerHTML = 'Preencha Todos os Campos!!';
+            return false;
+        }
+        videoload.src = `https://superstorefinder.net/support/wp-content/uploads/2018/01/grey_style.gif`;
+        responselogin.innerHTML = `Verificando Credenciais...`;
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.FAVORITO_USUARIO = json.favorito;
+                    sessionStorage.RACA_USUARIO = json.raca;
+
+                    setTimeout(function () {
+                        window.location = "dashboard/dashboard.html";
+                        videoload.src = ``;
+                        responselogin.innerHTML = ``;
+                    }, 2000); // apenas para exibir o loading
+
+                });
+
+            } else {
+                console.log("Houve um erro ao tentar realizar o login!");
+                videoload.src = ``;
+                responselogin.innerHTML = '<h1 style="font-size:50px; margin-left:-350px; text-align:center;margin-top:100px"><span style="display:block">Email ou Senha</span> Inválidos</h1>'
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+        return false;
+    }
+</script>
 </html>
