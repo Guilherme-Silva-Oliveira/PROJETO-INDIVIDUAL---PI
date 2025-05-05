@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    color: white;
+    background-image: url('../IMAGENS/abismo.jpg');
+    background-size: cover;
+}
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+h1{
+    font-size: 50px;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+:root {
+    --primary-brand-color: #ED145B;
+    --secondary-brand-color: #0762C8;
+    --success: #198754;
+    --success-dark: #095c36;
+    --success-light: #9dd3ba;
+    --warning: #ffc107;
+    --warning-dark: #705400;
+    --warning-light: #fdebb3;
+    --danger: #dc3545;
+    --danger-dark: #990c19;
+    --danger-light: #f0c1c6;
+    --new-gray: #CCCCCC;
+    --new-black: #212427;
+    --new-white: #E8E8E8;
+}
+
+/* BOX DE QUIZ */
+section.itens{
+    padding: 65px 120px;
+}
+section.itens .box-itens{
+    border: 1px solid rgba(0, 0, 0, 0.397);
+    background-color: rgba(0, 0, 0, 0.596);
+    border-radius: 15px;
+    width: 100%;
+    height: 720px;
+    padding: 40px;
+}
+button {
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.flex-colunar {
+    display: flex;
+    flex-direction: column;
+}
+
+.width-fit-content {
+    width: fit-content;
+}
+
+.border-primary {
+    border: 3px solid var(--primary-brand-color);
+}
+
+.border-secondary {
+    border: 3px solid var(--secondary-brand-color);
+}
+
+.padding-8 {
+    padding: 8px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-success-with-bg {
+    color: var(--success-dark);
+    background-color: var(--success-light);
+}
+
+.text-warning-with-bg {
+    color: var(--warning-dark);
+    background-color: var(--warning-light);
+}
+
+.text-danger-with-bg {
+    color: var(--danger-dark);
+    background-color: var(--danger-light);
+}
+
+.text-new-gray {
+    color: var(--new-gray);
+}
+#jogo{
+    border: transparent;
+    width: 500px;
+    transform: scale(1.65);
+}
+#pontuacaoEJogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 580px;
+}
+#btnIniciarQuiz{
+    width: 1000px;
+    height: 230px;
+    font-size: 60px;
+    border: solid 1px white;
+    background-color: transparent;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin-top: -30px;
+    font-family: 'Cinzel', serif;
+}
+#btnIniciarQuiz:hover{
+    background-color: white;
+    color: black;
+}
+#botoes button{
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Cinzel', serif;
+    transition: 0.3s;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border: solid 1px black;
+}
+#botoes button:hover{
+    background-color: transparent;
+    color: white;
+}
