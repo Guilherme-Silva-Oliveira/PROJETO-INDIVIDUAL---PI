@@ -9,9 +9,18 @@ senha varchar(20),
 raca varchar(15),
 favorito varchar(20)
 );
-/*
-create table Formulario (
-idFormulario int primary key auto_increment,
 
+create table ResultadoQuiz (
+idResposta int primary key auto_increment,
+pergunta1 varchar(20),
+pergunta2 varchar(20),
+pergunta3 varchar(20),
+pergunta4 varchar(20),
+pergunta5 varchar(20),
+pergunta6 varchar(20),
+pergunta7 varchar(20),
+pergunta8 varchar(20)
 );
-*/
+
+select * from Usuarios;
+select * from Respostas;
