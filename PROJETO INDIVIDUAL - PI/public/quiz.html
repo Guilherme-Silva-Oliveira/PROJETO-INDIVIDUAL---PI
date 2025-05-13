@@ -20,7 +20,7 @@
                 <h1>TESTE | GOD OF WAR RAGNAROK</h1>
                 <div id="pontuacaoEJogo">
                     <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
-            
+
                     <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
                         <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
                             <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
@@ -33,33 +33,37 @@
                             <span id="msgFinal" class="width-fit-content">***</span>
                         </div>
                     </div>
-            
+
                     <div id="jogo" class="width-fit-content flex-colunar border-secondary">
-            
+
                         <div id="infoQuestao" class="padding-8">
-                            <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
+                            <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span
+                                    id="qtdQuestoes"></span>
                                 questões.</span>
                         </div>
-            
+
                         <div id="perguntaDaQuestaoAtual" class="padding-8">
                             <span id="spanQuestaoExibida" class="text-bold"></span>
                         </div>
-            
+
                         <div id="infoAlternativas" class="padding-8">
                             <span><em>Escolha uma opção dentre as abaixo:</em></span>
                         </div>
-            
+
                         <div id="opcoes" class="flex-colunar padding-8">
                             <span>
-                                <input type="radio" id="primeiraOpcao" name="option" class="radio" value="alternativaA" />
+                                <input type="radio" id="primeiraOpcao" name="option" class="radio"
+                                    value="alternativaA" />
                                 <label for="primeiraOpcao" class="option" id="labelOpcaoUm"></label>
                             </span>
                             <span>
-                                <input type="radio" id="segundaOpcao" name="option" class="radio" value="alternativaB" />
+                                <input type="radio" id="segundaOpcao" name="option" class="radio"
+                                    value="alternativaB" />
                                 <label for="segundaOpcao" class="option" id="labelOpcaoDois"></label>
                             </span>
                             <span>
-                                <input type="radio" id="terceiraOpcao" name="option" class="radio" value="alternativaC" />
+                                <input type="radio" id="terceiraOpcao" name="option" class="radio"
+                                    value="alternativaC" />
                                 <label for="terceiraOpcao" class="option" id="labelOpcaoTres"></label>
                             </span>
                             <span>
@@ -67,13 +71,13 @@
                                 <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
                             </span>
                         </div>
-            
+
                         <div id="botoes" class="flex-colunar padding-8">
                             <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
                             <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
                             <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
                         </div>
-            
+
                     </div>
                 </div>
             </div>
@@ -84,32 +88,58 @@
     const listaDeQuestoes = [
 
         {
-            pergunta: "Qual mês tem 30 dias?",
-            alternativaA: "Janeiro",
-            alternativaB: "Dezembro",
-            alternativaC: "Junho",
-            alternativaD: "Agosto",
-            alternativaCorreta: "alternativaC"
+            pergunta: "Qual o seu Contato com o Jogo?",
+            alternativaA: "Já Joguei",
+            alternativaB: "Apenas Assisti",
+            alternativaC: "Já Ouvi Falar",
+            alternativaD: "Nunca Joguei"
         },
 
         {
-            pergunta: "Quantas horas tem em um dia?",
-            alternativaA: "30 horas",
-            alternativaB: "38 horas",
-            alternativaC: "48 horas",
-            alternativaD: "24 horas",
-            alternativaCorreta: "alternativaD"
+            pergunta: "Se Já Jogou, Por Quantas Horas?",
+            alternativaA: "Menos de 15 Horas",
+            alternativaB: "Entre 15 e 40 Horas",
+            alternativaC: "Mais de 40 Horas",
+            alternativaD: "Nunca Joguei"
         },
 
         {
-            pergunta: "Qual destes números é ímpar?",
-            alternativaA: "Dez",
-            alternativaB: "Doze",
-            alternativaC: "Oito",
-            alternativaD: "Onze",
-            alternativaCorreta: "alternativaD"
+            pergunta: "Qual seu Estilo de Jogo Favorito?",
+            alternativaA: "Ação",
+            alternativaB: "Aventura",
+            alternativaC: "História e Narrativa",
+            alternativaD: "Não Gosto de Jogar"
+        },
+
+        {
+            pergunta: "Diga qual a Opção mais lhe Descreve",
+            alternativaA: "Força Bruta",
+            alternativaB: "Magias Vanir",
+            alternativaC: "Lâminas de Fogo",
+            alternativaD: "Machado de Gelo"
+        },
+
+        {
+            pergunta: "Qual seu Lema?",
+            alternativaA: "Guerra é a Primeira Opção",
+            alternativaB: "Manter a Paz a Todo Custo",
+            alternativaC: "Confiança é uma Conquista",
+            alternativaD: "Salvar Vidas em Primeiro Lugar"
+        },
+
+        {
+            pergunta: "Qual Reino Gostaria de Visitar?",
+            alternativaA: "Svartalfheim Reino dos Anões",
+            alternativaB: "Muspelheim Reino do Fogo",
+            alternativaC: "Vanaheim Reino dos Deuses Vanir",
+            alternativaD: "Asgard Reino dos Deuses Vanir"
+        },
+
+        {
+            pergunta: "Recomendaria este Jogo para Alguém?",
+            alternativaA: "Sim",
+            alternativaB: "Não"
         }
-
     ]
 
     // variáveis globais    
@@ -145,14 +175,26 @@
         habilitarAlternativas(true)
         const questaoAtual = listaDeQuestoes[index]
         numeroDaQuestaoAtual = index
+
         console.log("questaoAtual")
         console.log(questaoAtual)
-        document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1 // ajustando porque o index começa em 0
+
+        document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1;
         document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta;
         document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativaA;
         document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alternativaB;
+
+        //Para o caso da última questão que tem menos alternativas
+        if (questaoAtual.alternativaC && questaoAtual.alternativaD) {
+        document.getElementById("terceiraOpcao").parentElement.style.display = "block";
+        document.getElementById("quartaOpcao").parentElement.style.display = "block";
         document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alternativaC;
         document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativaD;
+        }else {
+        // Oculta as alternativas C e D
+        document.getElementById("terceiraOpcao").parentElement.style.display = "none";
+        document.getElementById("quartaOpcao").parentElement.style.display = "none";
+    }
     }
 
     function submeter() {
@@ -192,17 +234,16 @@
         btnProx.disabled = true
         btnSubmeter.disabled = false
 
-        desmarcarRadioButtons()
+        desmarcarRadioButtons();
+        limparCoresBackgroundOpcoes();
 
         if (numeroDaQuestaoAtual < quantidadeDeQuestoes - 1) {
+            numeroDaQuestaoAtual++;
             preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
-        } else if (numeroDaQuestaoAtual == quantidadeDeQuestoes - 1) {
-            alert("Atenção... a próxima é a ultima questão!")
-            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
-        } else {
-            finalizarJogo()
+
+        }else {
+            finalizarJogo();
         }
-        limparCoresBackgroundOpcoes()
     }
 
     function tentarNovamente() {
@@ -265,4 +306,5 @@
         window.location = "login.html";
     }
 </script>
+
 </html>

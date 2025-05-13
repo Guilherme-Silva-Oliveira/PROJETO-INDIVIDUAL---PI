@@ -38,6 +38,8 @@
                 <input type="text" id="ipt_email_usuario">
                 <label>Senha:</label>
                 <input type="text" id="ipt_senha_usuario">
+                <label>Confirmar Senha:</label>
+                <input type="text" id="ipt_confirmar_senha">
 
                 <label id="descer">Escolha sua Raça:</label>
                 <div class="escolhas">
@@ -94,6 +96,7 @@
     var emailVar = ipt_email_usuario.value;
     var senhaVar = ipt_senha_usuario.value;
     var favoritoVar = sel_personagem_favorito.value;
+    var confirmarSenha = ipt_confirmar_senha.value;
 
     //Maneira para Recolher o valor de Raca
     var racaRadios = document.getElementsByName("radio_raca");
@@ -117,7 +120,11 @@
     ) {
       return false;
     }
-
+    if(confirmarSenha != senhaVar){
+      mensagem_erro.innerHTML = `Senha e Confirmar Senha Devem ser Iguais!!`;
+    }else{
+      
+    
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
@@ -153,13 +160,14 @@
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
       });
-
+}
     return false; 
     }else{
         mensagem_erro.innerHTML =
         "Preencha Todos os Campos";
       alert('Insira os Dados Corretamente!!')
     }
+    
     }
 </script>
 </html>
