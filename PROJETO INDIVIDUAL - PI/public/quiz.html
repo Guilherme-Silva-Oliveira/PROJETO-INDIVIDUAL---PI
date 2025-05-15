@@ -85,69 +85,10 @@
     </section>
 </body>
 <script>
-    const listaDeQuestoes = [
-
-        {
-            pergunta: "Qual o seu Contato com o Jogo?",
-            alternativaA: "Já Joguei",
-            alternativaB: "Apenas Assisti",
-            alternativaC: "Já Ouvi Falar",
-            alternativaD: "Nunca Joguei"
-        },
-
-        {
-            pergunta: "Se Já Jogou, Por Quantas Horas?",
-            alternativaA: "Menos de 15 Horas",
-            alternativaB: "Entre 15 e 40 Horas",
-            alternativaC: "Mais de 40 Horas",
-            alternativaD: "Nunca Joguei"
-        },
-
-        {
-            pergunta: "Qual seu Estilo de Jogo Favorito?",
-            alternativaA: "Ação",
-            alternativaB: "Aventura",
-            alternativaC: "História e Narrativa",
-            alternativaD: "Não Gosto de Jogar"
-        },
-
-        {
-            pergunta: "Diga qual a Opção mais lhe Descreve",
-            alternativaA: "Força Bruta",
-            alternativaB: "Magias Vanir",
-            alternativaC: "Lâminas de Fogo",
-            alternativaD: "Machado de Gelo"
-        },
-
-        {
-            pergunta: "Qual seu Lema?",
-            alternativaA: "Guerra é a Primeira Opção",
-            alternativaB: "Manter a Paz a Todo Custo",
-            alternativaC: "Confiança é uma Conquista",
-            alternativaD: "Salvar Vidas em Primeiro Lugar"
-        },
-
-        {
-            pergunta: "Qual Reino Gostaria de Visitar?",
-            alternativaA: "Svartalfheim Reino dos Anões",
-            alternativaB: "Muspelheim Reino do Fogo",
-            alternativaC: "Vanaheim Reino dos Deuses Vanir",
-            alternativaD: "Asgard Reino dos Deuses Vanir"
-        },
-
-        {
-            pergunta: "Recomendaria este Jogo para Alguém?",
-            alternativaA: "Sim",
-            alternativaB: "Não"
-        }
-    ]
+    let listaDeQuestoes = [];
 
     // variáveis globais    
     let numeroDaQuestaoAtual = 0
-    let pontuacaoFinal = 0
-    let tentativaIncorreta = 0
-    let certas = 0
-    let erradas = 0
     let quantidadeDeQuestoes = listaDeQuestoes.length
     // let isUltima = numeroDaQuestaoAtual == quantidadeDeQuestoes-1 ? true : false
 
@@ -156,6 +97,49 @@
         document.getElementById('jogo').style.display = "none"
     }
 
+    function buscar() {
+        //Pegar o caminho para a função GET do buscar
+        fetch("http://localhost:3333/perguntas/buscar", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(function (resposta) {
+                console.log("ESTOU NO THEN DO buscar()!");
+
+                if (resposta.ok) {
+                    //Confirma o recebimento dos dados no resposta
+                    resposta.json().then(data =>{
+                        console.log(data);
+                        console.log(JSON.stringify(data));
+
+                        //Adiciona ao vetor de questões o valor recebido em data
+                        listaDeQuestoes = data;
+                        quantidadeDeQuestoes = listaDeQuestoes.length;
+                        document.getElementById('qtdQuestoes').innerHTML = quantidadeDeQuestoes;
+                        preencherHTMLcomQuestaoAtual(0);
+
+                        //Função Nativa do Quiz pego como Base
+                        btnSubmeter.disabled = false;
+                        btnProx.disabled = true;
+                    });
+                } else {
+                    console.log("Houve um erro ao tentar buscar as perguntas!");
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+
+        return false;
+    }
+
+
+
     function iniciarQuiz() {
         document.getElementById('pontuacao').style.display = "none"
         document.getElementById('jogo').style.display = "flex"
@@ -163,12 +147,11 @@
 
         document.getElementById('qtdQuestoes').innerHTML = quantidadeDeQuestoes
 
-        preencherHTMLcomQuestaoAtual(0)
+        buscar();
+        preencherHTMLcomQuestaoAtual(0);
 
         btnSubmeter.disabled = false
         btnProx.disabled = true
-        // btnConcluir.disabled = true
-        btnTentarNovamente.disabled = true
     }
 
     function preencherHTMLcomQuestaoAtual(index) {
@@ -180,22 +163,21 @@
         console.log(questaoAtual)
 
         document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1;
-        document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta;
-        document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativaA;
-        document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alternativaB;
+        document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.enunciado;
+        document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alt_A;
+        document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alt_B;
 
-        //Para o caso da última questão que tem menos alternativas
-        if (questaoAtual.alternativaC && questaoAtual.alternativaD) {
-        document.getElementById("terceiraOpcao").parentElement.style.display = "block";
-        document.getElementById("quartaOpcao").parentElement.style.display = "block";
-        document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alternativaC;
-        document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativaD;
-        }else {
-        // Oculta as alternativas C e D
-        document.getElementById("terceiraOpcao").parentElement.style.display = "none";
-        document.getElementById("quartaOpcao").parentElement.style.display = "none";
+        if (questaoAtual.alt_C && questaoAtual.alt_D) {
+            document.getElementById("terceiraOpcao").parentElement.style.display = "block";
+            document.getElementById("quartaOpcao").parentElement.style.display = "block";
+            document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alt_C;
+            document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alt_D;
+        } else {
+            document.getElementById("terceiraOpcao").parentElement.style.display = "none";
+            document.getElementById("quartaOpcao").parentElement.style.display = "none";
+        }
     }
-    }
+
 
     function submeter() {
         const options = document.getElementsByName("option"); // recupera alternativas no html
@@ -241,7 +223,7 @@
             numeroDaQuestaoAtual++;
             preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
 
-        }else {
+        } else {
             finalizarJogo();
         }
     }
@@ -254,37 +236,7 @@
     function checarResposta() {
         const questaoAtual = listaDeQuestoes[numeroDaQuestaoAtual] // questão atual 
         const respostaQuestaoAtual = questaoAtual.alternativaCorreta // qual é a resposta correta da questão atual
-
         const options = document.getElementsByName("option"); // recupera alternativas no html
-
-        let alternativaCorreta = null // variável para armazenar a alternativa correta
-
-        options.forEach((option) => {
-            if (option.value === respostaQuestaoAtual) {
-                console.log("alternativaCorreta está no componente: " + alternativaCorreta)
-                alternativaCorreta = option.labels[0].id
-            }
-        })
-
-        // verifica se resposta assinalada é correta
-        options.forEach((option) => {
-            if (option.checked === true && option.value === respostaQuestaoAtual) {
-                document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
-                pontuacaoFinal++
-                certas++
-                document.getElementById("spanCertas").innerHTML = certas
-                numeroDaQuestaoAtual++
-            } else if (option.checked && option.value !== respostaQuestaoAtual) {
-                const wrongLabelId = option.labels[0].id
-
-                document.getElementById(wrongLabelId).classList.add("text-danger-with-bg")
-                document.getElementById(alternativaCorreta).classList.add("text-success-with-bg")
-                tentativaIncorreta++
-                erradas++
-                document.getElementById("spanErradas").innerHTML = erradas
-                numeroDaQuestaoAtual++
-            }
-        })
     }
 
     function limparCoresBackgroundOpcoes() {
