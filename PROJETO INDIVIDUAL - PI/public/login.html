@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <title>CADASTRO | USUÁRIO</title>
+    <title>LOGIN | USUÁRIO</title>
     <link rel="stylesheet" href="css/style_login_cadastro.css">
     <link rel="icon" href="IMAGENS/midigard-logo.jpg" type="image/jpeg">
     <script src="js/script.js"></script>
@@ -85,7 +85,6 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
                     sessionStorage.FAVORITO_USUARIO = json.favorito;
                     sessionStorage.RACA_USUARIO = json.raca;
 
@@ -93,7 +92,7 @@
                         window.location = "dashboard/dashboard.html";
                         videoload.src = ``;
                         responselogin.innerHTML = ``;
-                    }, 2000); // apenas para exibir o loading
+                    }, 2000);
 
                 });
 

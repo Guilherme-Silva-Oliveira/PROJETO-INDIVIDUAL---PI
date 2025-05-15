@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <title>USUÁRIO | RAGNAROK</title>
     <link rel="icon" href="IMAGENS/midigard-logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="css/style_dashboard.css">
+    <script src="js/sessao.js"></script>
 </head>
-<body>
-    
+
+<body onload="validarSessao()">
+    <header>
+        <div class="allheader">
+            <a href="./dashboard/dashboard.html"><img src="../IMAGENS/menu.png" id="menu"></a>
+            <a href="../user.html"><img src="../IMAGENS/user.png" id="user"></a>
+            <a href="../index.html"><img src="../IMAGENS/info2.png" id="info"></a>
+        </div>
+    </header>
+
+    <section class="itens">
+        <div class="container">
+            <h1>DASHBOARD | USUÁRIO</h1>
+            <div class="user_infos">
+                <img class="user_foto" src="" id="imageuser">
+                <div class="infos">
+                    <div class="card">
+                        <h3>Nome:</h3>
+                        <label class="response" id="response_nome">Guilherme Silva de Oliveira</label>
+                    </div>
+                    <div class="card">
+                        <h3>E-mail:</h3>
+                        <label class="response" id="response_email">guilherme.soliveira@sptech.school</label>
+                    </div>
+                    <div class="card">
+                        <h3>Personagem Favorito:</h3>
+                        <label class="response" id="response_favorito">Kratos</label>
+                    </div>
+                    <div class="card">
+                        <h3>Raça:</h3>
+                        <label class="response" id="response_raca">Vanir</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
