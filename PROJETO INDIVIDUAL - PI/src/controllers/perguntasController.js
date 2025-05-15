@@ -12,7 +12,7 @@ function buscar(req, res) {
         .catch(
             function (erro) {
                 console.log(erro);
-                console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                console.log("\nHouve um erro ao Encontrar Perguntas! Erro: ", erro.sqlMessage);
                 res.status(500).json(erro.sqlMessage);
             }
         );

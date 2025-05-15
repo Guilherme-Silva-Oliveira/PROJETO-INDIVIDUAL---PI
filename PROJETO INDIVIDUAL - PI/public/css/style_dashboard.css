@@ -1,23 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
 html {
     scroll-behavior: smooth;
 }
-body{
+
+body {
     background-color: black;
 }
-.container{
+
+.container {
     max-width: 1280px;
     margin: 0 auto;
     padding: 2% 0;
 }
 
 /* HEADER */
-header{
+header {
     position: fixed;
     height: 100%;
     width: 190px;
@@ -26,29 +29,35 @@ header{
     text-align: center;
     border-right: 1px solid white;
 }
-header img{
+
+header img {
     display: block;
     filter: invert(100%);
     max-width: 70px;
     margin-bottom: 50px;
     transition: 0.3s;
 }
-header img:hover{
+
+header img:hover {
     transform: scale(1.10);
 }
-#user{
+
+#user {
     max-width: 100px;
 }
-#menu{
+
+#menu {
     margin-left: 15px;
 }
-#info{
+
+#info {
     max-width: 110px;
     margin-left: -5px;
 }
 
 /* INFOS DA DASH */
-section.itens h1, .user_infos .infos h3{
+section.itens h1,
+.user_infos .infos h3 {
     font-size: 70px;
     font-family: 'Cinzel', serif;
     margin-bottom: 30px;
@@ -56,24 +65,29 @@ section.itens h1, .user_infos .infos h3{
 }
 
 /* TELA DO USUÁRIO */
-.card{
+.card {
     margin-bottom: 20px;
 }
-.user_infos{
+
+.user_infos {
     display: flex;
 }
-.user_infos .infos{
+
+.user_infos .infos {
     margin-top: 140px;
     margin-left: 150px;
 }
-.user_infos .infos h1{
+
+.user_infos .infos h1 {
     font-size: 50px;
 }
-.user_infos .infos h3{
+
+.user_infos .infos h3 {
     font-size: 30px;
     margin-bottom: -10px;
 }
-.user_infos .infos .response{
+
+.user_infos .infos .response {
     color: white;
     border-radius: 10px;
     width: 200px;
@@ -82,7 +96,7 @@ section.itens h1, .user_infos .infos h3{
     margin-bottom: 30px;
 }
 
-.user_foto{
+.user_foto {
     background-color: transparent;
     border: 1px solid white;
     border-radius: 50%;
@@ -93,6 +107,11 @@ section.itens h1, .user_infos .infos h3{
     margin-left: -80px;
     object-fit: cover;
 }
-.user_foto:hover{
+
+.user_foto:hover {
     transform: scale(1.02);
+}
+
+.pizza{
+    width: 400px;
 }

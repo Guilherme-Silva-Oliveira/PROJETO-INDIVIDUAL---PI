@@ -8,9 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <title>DASHBOARD | RAGNAROK</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../css/style_dashboard.css">
+    <script src="../js/coletarDados.js"></script>
 </head>
-<body>
+<body onload="coletarFavorito()">
     <header>
         <div class="allheader">
         <a href="dashboard.html"><img src="../IMAGENS/menu.png" id="menu"></a>
@@ -22,6 +24,9 @@
     <section class="itens">
         <div class="container">
             <h1>DASHBOARD | INFORMAÇÕES</h1>
+            <div class="pizza">
+            <canvas id="grafico-pizza" class="chart-container"></canvas>
+            </div>
         </div>
     </section>
 </body>
