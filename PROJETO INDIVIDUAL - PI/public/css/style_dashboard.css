@@ -13,11 +13,29 @@ body {
     background-color: black;
 }
 
+#fundo1 {
+    background-image: url('../IMAGENS/minas.jpg');
+    background-size: cover;
+}
+
+#fundo2 {
+    background-image:
+        linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.397) 0%),
+        url('../IMAGENS/sutur-fundo.jpg');
+    background-size: cover;
+}
+
 .container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2% 0;
+    padding: 2% 0 0 0;
 }
+
+#response_nome,
+#response_email {
+    font-size: 40px;
+}
+
 
 /* HEADER */
 header {
@@ -74,8 +92,9 @@ section.itens h1,
 }
 
 .user_infos .infos {
-    margin-top: 140px;
+    margin-top: 100px;
     margin-left: 150px;
+    padding: 30px;
 }
 
 .user_infos .infos h1 {
@@ -112,6 +131,55 @@ section.itens h1,
     transform: scale(1.02);
 }
 
-.pizza{
-    width: 400px;
+.pizza {
+    width: 550px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: -250px;
+}
+
+.indicadores .card {
+    height: 170px;
+    width: 340px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+.indicadores .card:hover{
+    transform: scale(1.02);
+}
+
+.indicadores .card label {
+    color: white;
+    font-size: 25px;
+}
+
+.indicadores {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.indicadores .card h1 {
+    font-size: 28px;
+}
+
+.barra {
+    margin-top: -490px;
+    margin-left: -100px;
+    width: 980px;
+}
+
+#total-usuarios {
+    font-size: 45px;
+}
+
+#total-raca {
+    font-size: 45px;
+}
+
+#total-personagem{
+    font-size: 40px;
 }

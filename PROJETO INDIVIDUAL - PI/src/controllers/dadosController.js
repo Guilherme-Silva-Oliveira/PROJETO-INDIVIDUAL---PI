@@ -1,7 +1,7 @@
-var perguntasModel = require("../models/dadosModel");
+var dadosModel = require("../models/dadosModel");
 
 function coletarFavorito(req, res) {
-    perguntasModel.coletarFavorito()
+    dadosModel.coletarFavorito()
         .then(function (dados) {
             if (dados.length > 0) {
                 res.status(200).json(dados);
@@ -19,7 +19,7 @@ function coletarFavorito(req, res) {
 }
 
 function coletarRaca(req, res) {
-    perguntasModel.coletarRaca()
+    dadosModel.coletarRaca()
         .then(function (dados) {
             if (dados.length > 0) {
                 res.status(200).json(dados);
@@ -36,7 +36,67 @@ function coletarRaca(req, res) {
         );
 }
 
+function totalUsuarios(req, res) {
+    dadosModel.totalUsuarios()
+        .then(function (dados) {
+            var quantidade = dados[0];
+            if (dados.length > 0) {
+                res.status(200).json(quantidade);
+            } else {
+                res.status(204).send('Informações Não Encontradas!!')
+            }
+        })
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao Coletar Informações! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function racaMaisEscolhida(req, res) {
+    dadosModel.racaMaisEscolhida()
+        .then(function (dados) {
+            var quantidade = dados[0];
+            if (dados.length > 0) {
+                res.status(200).json(quantidade);
+            } else {
+                res.status(204).send('Informações Não Encontradas!!')
+            }
+        })
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao Coletar Informações! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function personagemMaisEscolhida(req, res) {
+    dadosModel.personagemMaisEscolhida()
+        .then(function (dados) {
+            var quantidade = dados[0];
+            if (dados.length > 0) {
+                res.status(200).json(quantidade);
+            } else {
+                res.status(204).send('Informações Não Encontradas!!')
+            }
+        })
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao Coletar Informações! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     coletarFavorito,
-    coletarRaca
+    coletarRaca,
+    totalUsuarios,
+    racaMaisEscolhida,
+    personagemMaisEscolhida
 };

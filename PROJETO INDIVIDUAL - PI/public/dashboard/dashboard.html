@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +11,42 @@
     <title>DASHBOARD | RAGNAROK</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../css/style_dashboard.css">
-    <script src="../js/coletarDados.js"></script>
 </head>
-<body onload="coletarFavorito()">
+
+<body onload="coletarFavorito(), coletarRaca(), totalUsuarios(), racaMaisEscolhida(), personagemMaisEscolhida()" id="fundo2">
     <header>
         <div class="allheader">
-        <a href="dashboard.html"><img src="../IMAGENS/menu.png" id="menu"></a>
-        <a href="../user.html"><img src="../IMAGENS/user.png" id="user"></a>
-        <a href="../index.html"><img src="../IMAGENS/info2.png" id="info"></a>
-    </div>
+            <a href="dashboard.html"><img src="../IMAGENS/menu.png" id="menu"></a>
+            <a href="../user.html"><img src="../IMAGENS/user.png" id="user"></a>
+            <a href="../index.html"><img src="../IMAGENS/info2.png" id="info"></a>
+        </div>
     </header>
 
     <section class="itens">
         <div class="container">
-            <h1>DASHBOARD | INFORMAÇÕES</h1>
+            <h1>DASHBOARD | GERAL</h1>
+            <div class="indicadores">
+                <div class="card">
+                    <h1>Total de Usuários</h1>
+                    <label id="total-usuarios"></label>
+                </div>
+                <div class="card">
+                    <h1>Raça mais Escolhida</h1>
+                    <label id="total-raca"></label>
+                </div>
+                <div class="card">
+                    <h1>Pers. mais Escolhido</h1>
+                    <label id="total-personagem">Teste</label>
+                </div>
+            </div>
             <div class="pizza">
-            <canvas id="grafico-pizza" class="chart-container"></canvas>
+                <canvas id="grafico-pizza" class="chart-container"></canvas>
+            </div>
+            <div class="barra">
+                <canvas id="grafico-bar" class="chart-container"></canvas>
             </div>
         </div>
     </section>
-</body>
+    <script src="../js/coletarDados.js"></script>
+</body> 
 </html>
