@@ -93,10 +93,70 @@ function personagemMaisEscolhida(req, res) {
         );
 }
 
+function recomendados(req, res) {
+    dadosModel.recomendados()
+        .then(function (dados) {
+            var quantidade = dados[0];
+            if (dados.length > 0) {
+                res.status(200).json(quantidade);
+            } else {
+                res.status(204).send('Informações Não Encontradas!!')
+            }
+        })
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao Coletar Informações! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function reinos(req, res) {
+    dadosModel.reinos()
+        .then(function (dados) {
+            var quantidade = dados[0];
+            if (dados.length > 0) {
+                res.status(200).json(quantidade);
+            } else {
+                res.status(204).send('Informações Não Encontradas!!')
+            }
+        })
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao Coletar Informações! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function estilos(req, res) {
+    dadosModel.estilos()
+        .then(function (dados) {
+            var quantidade = dados[0];
+            if (dados.length > 0) {
+                res.status(200).json(quantidade);
+            } else {
+                res.status(204).send('Informações Não Encontradas!!')
+            }
+        })
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao Coletar Informações! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     coletarFavorito,
     coletarRaca,
     totalUsuarios,
     racaMaisEscolhida,
-    personagemMaisEscolhida
+    personagemMaisEscolhida,
+    recomendados,
+    reinos,
+    estilos
 };

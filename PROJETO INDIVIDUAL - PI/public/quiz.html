@@ -110,7 +110,7 @@
 
                 if (resposta.ok) {
                     //Confirma o recebimento dos dados no resposta
-                    resposta.json().then(data =>{
+                    resposta.json().then(data => {
                         console.log(data);
                         console.log(JSON.stringify(data));
 
@@ -178,14 +178,16 @@
         }
     }
 
-
+    let respostasQuiz = [];
     function submeter() {
         const options = document.getElementsByName("option"); // recupera alternativas no html
+        var respostaAtual = '';
 
         let hasChecked = false
         for (let i = 0; i < options.length; i++) {
             if (options[i].checked) {
-                hasChecked = true
+                respostaAtual = options[i].value;
+                hasChecked = true;
                 break
             }
         }
@@ -193,12 +195,12 @@
         if (!hasChecked) {
             alert("Não há alternativas escolhidas. Escolha uma opção.")
         } else {
-            btnSubmeter.disabled = true
-            btnProx.disabled = false
+            respostasQuiz[numeroDaQuestaoAtual] = respostaAtual;
+            btnSubmeter.disabled = true;
+            btnProx.disabled = false;
 
-            habilitarAlternativas(false)
-
-            checarResposta()
+            habilitarAlternativas(false);
+            checarResposta();
         }
     }
 
@@ -255,7 +257,39 @@
     }
 
     function finalizarJogo() {
+        salvar();
         window.location = "login.html";
+    }
+
+    // SCRIPT PARA SALVAR AS RESPOSTAS
+    function salvar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        const salvarDados = {};
+        for (let i = 0; i < respostasQuiz.length; i++) {
+            if (respostasQuiz[i]) {
+                salvarDados[`resposta${i + 1}`] = respostasQuiz[i];
+            }
+        }
+
+
+        // Enviando o valor da nova input
+        fetch("http://localhost:3333/respostas/salvar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(salvarDados),
+        })
+
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        return false;
     }
 </script>
 

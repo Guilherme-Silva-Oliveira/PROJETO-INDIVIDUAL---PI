@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/style_dashboard.css">
 </head>
 
-<body id="fundo3">
+<body id="fundo3" onload="recomendados(), reinos(), estilos()">
     <header>
         <div class="allheader">
             <a href="dashboard.html"><img src="../IMAGENS/menu.png" id="menu"></a>
@@ -24,24 +24,30 @@
 
     <section class="itens">
         <div class="container">
-            <h1>DASHBOARD | QUIZ</h1>
-                        <div class="indicadores">
+            <div class="header-dashboard-itens">
+                <h1>DASHBOARD | QUIZ</h1>
+                <a href="dashboard.html"> <button id="button-pass">Dashboard Geral</button></a>
+            </div>
+            <div class="indicadores">
                 <div class="card">
-                    <h1>Total de Usuários</h1>
-                    <label id="total-usuarios"></label>
+                    <h1>Usuários que Recomendam o Jogo</h1>
+                    <label id="total-recomendacoes"></label>
                 </div>
                 <div class="card">
-                    <h1>Raça mais Escolhida</h1>
-                    <label id="total-raca"></label>
+                    <h1>Reino Mais Escolhido</h1>
+                    <label id="total-reino"></label>
                 </div>
                 <div class="card">
-                    <h1>Pers. mais Escolhido</h1>
-                    <label id="total-personagem"></label>
+                    <h1>Estilo Mais Escolhido</h1>
+                    <label id="total-estilo"></label>
                 </div>
+            </div>
+            <div class="barra">
+                <canvas id="grafico-bar" class="chart-container"></canvas>
             </div>
         </div>
     </section>
-
+    <script src="../js/coletarDadosQuiz.js"></script>
 </body>
 
 </html>

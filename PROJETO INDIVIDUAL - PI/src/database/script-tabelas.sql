@@ -21,9 +21,11 @@ alt_D varchar(40)
 
 create table RespostaUsuario (
 idRespostaUsuario int primary key auto_increment,
-resposta varchar(40),
-fk_Usuario int,
-fk_Pergunta int,
-foreign key fk_Usuario(fk_Usuario) references Usuarios(idUser),
-foreign key fk_Pergunta(fk_Pergunta) references PerguntaQuiz(idPergunta)
+resposta1 varchar(40),
+resposta2 varchar(40),
+resposta3 varchar(40),
+resposta4 varchar(40),
+resposta5 varchar(40),
+resposta6 varchar(40),
+resposta7 varchar(40)
 );

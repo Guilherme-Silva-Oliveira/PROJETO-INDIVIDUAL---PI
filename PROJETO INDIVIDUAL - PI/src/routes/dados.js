@@ -22,4 +22,16 @@ router.get("/personagemMaisEscolhida", function (req, res) {
     dadosController.personagemMaisEscolhida(req, res);
 });
 
+router.get("/recomendados", function (req, res) {
+    dadosController.recomendados(req, res);
+});
+
+router.get("/reinos", function (req, res) {
+    dadosController.reinos(req, res);
+});
+
+router.get("/estilos", function (req, res) {
+    dadosController.estilos(req, res);
+});
+
 module.exports = router;

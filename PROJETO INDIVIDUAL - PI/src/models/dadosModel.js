@@ -40,10 +40,40 @@ function personagemMaisEscolhida() {
   return database.executar(instrucaoSql);
 }
 
+function recomendados() {
+  var instrucaoSql = `
+    SELECT truncate((select COUNT(resposta7)*100 from RespostaUsuario where resposta7 = "alternativaA") 
+/ COUNT(idRespostaUsuario),0) as totalRecomendacao FROM RespostaUsuario;
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
+}
+
+function reinos() {
+  var instrucaoSql = `
+SELECT resposta6, COUNT(*) AS escolhas from RespostaUsuario
+group by resposta6 order by resposta6 desc limit 1;
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
+}
+
+function estilos() {
+  var instrucaoSql = `
+SELECT resposta3, COUNT(*) AS favestilos from RespostaUsuario
+group by resposta3 order by resposta3 desc limit 1;
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
+}
+
 module.exports = {
   coletarFavorito,
   coletarRaca,
   totalUsuarios,
   racaMaisEscolhida,
-  personagemMaisEscolhida
+  personagemMaisEscolhida,
+  recomendados,
+  reinos,
+  estilos
 };
