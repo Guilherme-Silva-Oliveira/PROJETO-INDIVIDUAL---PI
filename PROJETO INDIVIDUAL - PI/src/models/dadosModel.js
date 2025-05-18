@@ -67,6 +67,30 @@ group by resposta3 order by resposta3 desc limit 1;
   return database.executar(instrucaoSql);
 }
 
+function contatos() {
+  var instrucaoSql = `
+SELECT resposta1 FROM RespostaUsuario;
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
+}
+
+function combates() {
+  var instrucaoSql = `
+SELECT resposta4 FROM RespostaUsuario;
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
+}
+
+function horas() {
+  var instrucaoSql = `
+SELECT resposta2 FROM RespostaUsuario;
+  `;
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
+}
+
 module.exports = {
   coletarFavorito,
   coletarRaca,
@@ -75,5 +99,8 @@ module.exports = {
   personagemMaisEscolhida,
   recomendados,
   reinos,
-  estilos
+  estilos,
+  contatos,
+  combates,
+  horas
 };

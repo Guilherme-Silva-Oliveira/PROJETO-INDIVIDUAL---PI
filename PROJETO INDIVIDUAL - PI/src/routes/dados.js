@@ -34,4 +34,16 @@ router.get("/estilos", function (req, res) {
     dadosController.estilos(req, res);
 });
 
+router.get("/contatos", function (req, res) {
+    dadosController.contatos(req, res);
+});
+
+router.get("/combates", function (req, res) {
+    dadosController.combates(req, res);
+});
+
+router.get("/horas", function (req, res) {
+    dadosController.horas(req, res);
+});
+
 module.exports = router;

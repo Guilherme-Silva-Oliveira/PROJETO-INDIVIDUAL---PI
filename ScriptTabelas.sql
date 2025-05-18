@@ -21,11 +21,13 @@ alt_D varchar(40)
 
 create table RespostaUsuario (
 idRespostaUsuario int primary key auto_increment,
-resposta varchar(40),
-fk_Usuario int,
-fk_Pergunta int,
-foreign key fk_Usuario(fk_Usuario) references Usuarios(idUser),
-foreign key fk_Pergunta(fk_Pergunta) references PerguntaQuiz(idPergunta)
+resposta1 varchar(40),
+resposta2 varchar(40),
+resposta3 varchar(40),
+resposta4 varchar(40),
+resposta5 varchar(40),
+resposta6 varchar(40),
+resposta7 varchar(40)
 );
 
 insert into PerguntaQuiz (enunciado, alt_A, alt_B, alt_C, alt_D) values
@@ -39,5 +41,14 @@ insert into PerguntaQuiz (enunciado, alt_A, alt_B, alt_C, alt_D) values
 
 select * from Usuarios;
 select * from RespostaUsuario;
-delete from Usuarios;
 
+SELECT truncate((select COUNT(resposta7)*100 from RespostaUsuario where resposta7 = "alternativaA") 
+/ COUNT(idRespostaUsuario),0) as totalRecomendacao FROM RespostaUsuario;
+
+SELECT resposta6, COUNT(*) AS escolhas from RespostaUsuario
+group by resposta6 order by resposta6 desc limit 1;
+
+SELECT resposta3, COUNT(*) AS favestilos from RespostaUsuario
+group by resposta3 order by resposta3 desc limit 1;
+
+SELECT resposta4, count(resposta4)

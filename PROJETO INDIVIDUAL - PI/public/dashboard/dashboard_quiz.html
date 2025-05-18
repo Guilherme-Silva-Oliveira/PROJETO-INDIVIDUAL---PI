@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/style_dashboard.css">
 </head>
 
-<body id="fundo3" onload="recomendados(), reinos(), estilos()">
+<body id="fundo3" onload="recomendados(), reinos(), estilos(),contatos(),combates(),horas()">
     <header>
         <div class="allheader">
             <a href="dashboard.html"><img src="../IMAGENS/menu.png" id="menu"></a>
@@ -28,7 +28,7 @@
                 <h1>DASHBOARD | QUIZ</h1>
                 <a href="dashboard.html"> <button id="button-pass">Dashboard Geral</button></a>
             </div>
-            <div class="indicadores">
+            <div class="indicadores" id="quiz-indicators">
                 <div class="card">
                     <h1>Usuários que Recomendam o Jogo</h1>
                     <label id="total-recomendacoes"></label>
@@ -42,8 +42,14 @@
                     <label id="total-estilo"></label>
                 </div>
             </div>
-            <div class="barra">
+            <div class="barra-quiz">
                 <canvas id="grafico-bar" class="chart-container"></canvas>
+            </div>
+            <div class="radar-quiz">
+                <canvas id="grafico-radar" class="chart-container"></canvas>
+            </div>
+            <div class="pizza-quiz">
+                <canvas id="grafico-pizza-quiz" class="chart-container"></canvas>
             </div>
         </div>
     </section>

@@ -25,7 +25,7 @@ body {
     background-size: cover;
 }
 
-#fundo3{
+#fundo3 {
     background-image:
         linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.74) 0%),
         url('../IMAGENS/abismo.jpg');
@@ -154,7 +154,8 @@ section.itens h1,
     text-align: center;
     transition: 0.3s;
 }
-.indicadores .card:hover{
+
+.indicadores .card:hover {
     transform: scale(1.02);
 }
 
@@ -179,6 +180,30 @@ section.itens h1,
     width: 980px;
 }
 
+.barra-quiz {
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 800px;
+    width: 800px;
+}
+
+.radar-quiz {
+    margin-top: 150px;
+    margin-left: -100px;
+    width: 800px;
+}
+
+.pizza-quiz{
+    width: 450px;
+    position: absolute;
+    margin-top: -880px;
+    margin-left: 1050px;
+}
+
+#quiz-indicators{
+    margin-left: -60px;
+}
+
 #total-usuarios {
     font-size: 45px;
 }
@@ -187,15 +212,17 @@ section.itens h1,
     font-size: 45px;
 }
 
-#total-personagem{
+#total-personagem {
     font-size: 40px;
 }
-.header-dashboard-itens{
+
+.header-dashboard-itens {
     display: flex;
-    gap:75px;
+    gap: 75px;
     height: 90px;
 }
-#button-pass{
+
+#button-pass {
     width: 250px;
     height: 90px;
     font-size: 26px;
@@ -205,7 +232,8 @@ section.itens h1,
     border-radius: 15px;
     transition: 0.3s;
 }
-#button-pass:hover{
+
+#button-pass:hover {
     transform: scale(1.03);
     background-color: white;
     color: black;
@@ -213,9 +241,10 @@ section.itens h1,
 }
 
 /* DASHBOARD QUIZ */
-#total-recomendacoes{
+#total-recomendacoes {
     font-size: 40px;
 }
-#total-reino{
+
+#total-reino {
     font-size: 30px;
 }

@@ -150,6 +150,60 @@ function estilos(req, res) {
         );
 }
 
+function contatos(req, res) {
+    dadosModel.contatos()
+        .then(function (dados) {
+            if (dados.length > 0) {
+                res.status(200).json(dados);
+            } else {
+                res.status(204).send('Informações Não Encontradas!!')
+            }
+        })
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao Coletar Informações! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function combates(req, res) {
+    dadosModel.combates()
+        .then(function (dados) {
+            if (dados.length > 0) {
+                res.status(200).json(dados);
+            } else {
+                res.status(204).send('Informações Não Encontradas!!')
+            }
+        })
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao Coletar Informações! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function horas(req, res) {
+    dadosModel.horas()
+        .then(function (dados) {
+            if (dados.length > 0) {
+                res.status(200).json(dados);
+            } else {
+                res.status(204).send('Informações Não Encontradas!!')
+            }
+        })
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao Coletar Informações! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     coletarFavorito,
     coletarRaca,
@@ -158,5 +212,8 @@ module.exports = {
     personagemMaisEscolhida,
     recomendados,
     reinos,
-    estilos
+    estilos,
+    contatos,
+    combates,
+    horas
 };
