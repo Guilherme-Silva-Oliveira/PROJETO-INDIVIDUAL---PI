@@ -25,6 +25,13 @@ body {
     background-size: cover;
 }
 
+#fundo3{
+    background-image:
+        linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.74) 0%),
+        url('../IMAGENS/abismo.jpg');
+    background-size: cover;
+}
+
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -182,4 +189,25 @@ section.itens h1,
 
 #total-personagem{
     font-size: 40px;
+}
+.header-dashboard-itens{
+    display: flex;
+    gap:75px;
+    height: 90px;
+}
+#button-pass{
+    width: 250px;
+    height: 90px;
+    font-size: 26px;
+    background-color: transparent;
+    color: white;
+    border: solid 1px white;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+#button-pass:hover{
+    transform: scale(1.03);
+    background-color: white;
+    color: black;
+    cursor: pointer;
 }

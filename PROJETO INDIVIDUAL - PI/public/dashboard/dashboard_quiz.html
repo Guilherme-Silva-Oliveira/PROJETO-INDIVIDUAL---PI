@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="../css/style_dashboard.css">
 </head>
 
-<body onload="coletarFavorito(), coletarRaca(), totalUsuarios(), racaMaisEscolhida(), personagemMaisEscolhida(  )"
-    id="fundo2">
+<body id="fundo3">
     <header>
         <div class="allheader">
             <a href="dashboard.html"><img src="../IMAGENS/menu.png" id="menu"></a>
@@ -25,11 +24,8 @@
 
     <section class="itens">
         <div class="container">
-            <div class="header-dashboard-itens">
-                <h1>DASHBOARD | GERAL</h1>
-                <a href="dashboard_quiz.html"> <button id="button-pass">Dashboard Quiz</button></a>
-            </div>
-            <div class="indicadores">
+            <h1>DASHBOARD | QUIZ</h1>
+                        <div class="indicadores">
                 <div class="card">
                     <h1>Total de Usuários</h1>
                     <label id="total-usuarios"></label>
@@ -43,15 +39,9 @@
                     <label id="total-personagem"></label>
                 </div>
             </div>
-            <div class="pizza">
-                <canvas id="grafico-pizza" class="chart-container"></canvas>
-            </div>
-            <div class="barra">
-                <canvas id="grafico-bar" class="chart-container"></canvas>
-            </div>
         </div>
     </section>
-    <script src="../js/coletarDados.js"></script>
+
 </body>
 
 </html>
