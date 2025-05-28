@@ -1,7 +1,6 @@
 var respostasModel = require("../models/respostasModel");
 
 function salvar(req, res) {
-  // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
 var respostas = req.body;
 
       respostasModel.salvar(
