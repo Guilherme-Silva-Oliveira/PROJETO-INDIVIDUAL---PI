@@ -4,8 +4,7 @@ function salvar(req, res) {
   // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
 var respostas = req.body;
 
-    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-    respostasModel.salvar(
+      respostasModel.salvar(
         respostas.resposta1,
         respostas.resposta2,
         respostas.resposta3,
