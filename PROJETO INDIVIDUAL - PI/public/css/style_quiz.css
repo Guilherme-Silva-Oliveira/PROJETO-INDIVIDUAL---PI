@@ -139,4 +139,10 @@ button {
 #botoes button:hover{
     background-color: transparent;
     color: white;
+    cursor: pointer;
 }
+#barra-progresso{
+    display: block;
+    width: 480px;
+}
+

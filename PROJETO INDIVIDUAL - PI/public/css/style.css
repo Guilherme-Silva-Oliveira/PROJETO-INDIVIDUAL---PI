@@ -119,15 +119,60 @@ section.estilo-jogo h2{
     width: 300px;
     height: 350px;
     border-radius: 10px;
-    transition: 0.3s;
+    transition: 0.5s;
     padding: 20px;
 }
 .card img{
     filter: invert(100%);
     max-width: 200px;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 .card:hover{
+    transform: scale(1.05);
+}
+.texto{
+    width: 239px;
+    height: 350px;
+    opacity: 0;
+    display: none;
+    transition: 0.3;
+    font-size: 35px;
+    text-align: center;
+}
+.image-texto img{
+    margin-top: 50px;
+    width: 100px;
+    filter: brightness(0) invert(1);
+    margin-left: 0px;
+}
+.card:hover .card-img{
+    display: none;
+}
+.card:hover h2{
+    display: none;
+}
+.card:hover .texto{
+    opacity: 1;
+    display: block;
+}
+
+/* CARD1 */
+.card1{
+    border: 1px white solid;
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    transition: 0.5s;
+    padding: 20px;
+    margin-right: 15px;
+}
+
+.card1 img{
+    filter: invert(100%);
+    max-width: 200px;
+    margin-left: 30px;
+}
+.card1:hover{
     transform: scale(1.05);
 }
 
@@ -153,7 +198,7 @@ section.sobre .todos{
     justify-content: space-between;
     gap:40px
 }
-section.sobre .texto{
+section.sobre .texto1{
     font-size: 36px;
     align-items: center;
     margin-top: 20px;
@@ -368,6 +413,7 @@ section.personagens-principais a{
 }
 section.personagens-principais .todos-card{
     display: block;
+    margin-left: -30px;
 }
 section.personagens-principais .todos-card .first-card{
     display: flex;
@@ -415,3 +461,5 @@ footer span{
 .ancora{
     scroll-margin-top: 120px;
 }
+
+

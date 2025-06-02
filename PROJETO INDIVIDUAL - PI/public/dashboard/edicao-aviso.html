@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <title>FÓRUM | USUÁRIOS</title>
+    <link rel="stylesheet" href="../css/style_dashboard.css">
+</head>
+
+<body onload="listarInfosDeUm()" id="fundo-editar">
+    <header>
+        <div class="allheader">
+            <a href="dashboard.html"><img src="../IMAGENS/logo_dash.png" id="menu"></a>
+            <a href="../user.html"><img src="../IMAGENS/user.png" id="user"></a>
+            <a href="forum.html"><img src="../IMAGENS/forum.png" id="forum"></a>
+            <a href="../index.html"><img src="../IMAGENS/logout.png" id="info"></a>
+        </div>
+    </header>
+    <div class="dash-right">
+
+        <div class="avisos">
+            <div class="container">
+                <h1>Edite o Aviso</h1>
+                <div class="div-form">
+                    <label>
+                        <span>ID:</span>
+                        <br>
+                        <input class="iput_editar" id="input_id" maxlength="100" type="text" style="color: black"
+                            disabled>
+                    </label>
+                    <label>
+                        <span>Autor:</span>
+                        <br>
+                        <input class="iput_editar" id="input_nome" maxlength="100" type="text" style="color: black"
+                            disabled>
+                    </label>
+                    <br>
+                    <label>
+                        <span>Descrição:</span>
+                        <br>
+                        <textarea placeholder="(máximo de 250 caracteres)" id="textarea_descricao" maxlength="250"
+                            rows="5"></textarea>
+                    </label>
+                    <br>
+                    <button onclick="editar()" class="btn-forum">Editar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function listarInfosDeUm() {
+        let idAvisoEditar = sessionStorage.getItem('ID_POSTAGEM_EDITANDO')
+        input_id.value = idAvisoEditar;
+        let autorAviso = sessionStorage.getItem('NOME_USUARIO');
+        input_nome.value = autorAviso;
+
+    }
+
+    function editar() {
+        fetch(`/avisos/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                descricao: textarea_descricao.value
+            })
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                window.location = "/dashboard/forum.html"
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+</script>

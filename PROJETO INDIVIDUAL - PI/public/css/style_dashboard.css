@@ -12,6 +12,20 @@ html {
 body {
     background-color: black;
     overflow: hidden;
+    color: white;
+}
+
+#fundo-scroll {
+    overflow: visible;
+    background-image: url('../IMAGENS/alfheim.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+#fundo-editar{
+    background-image: url('../IMAGENS/vanaheim.jpg');
+    background-size: cover;
 }
 
 #fundo1 {
@@ -74,11 +88,28 @@ header img:hover {
 
 #menu {
     margin-left: 15px;
+    transform: scale(1.5);
+    filter: brightness(0) invert(1);
+}
+
+#menu:hover {
+    transform: scale(1.7);
+}
+
+#forum {
+    margin-left: 15px;
+    transform: scale(1.5);
+    filter: brightness(0) invert(1);
+}
+
+#forum:hover {
+    transform: scale(1.7);
 }
 
 #info {
     max-width: 110px;
-    margin-left: -5px;
+    margin-left: 10px;
+    filter: brightness(0) invert(1);
 }
 
 /* INFOS DA DASH */
@@ -194,14 +225,14 @@ section.itens h1,
     width: 800px;
 }
 
-.pizza-quiz{
+.pizza-quiz {
     width: 450px;
     position: absolute;
     margin-top: -880px;
     margin-left: 1050px;
 }
 
-#quiz-indicators{
+#quiz-indicators {
     margin-left: -60px;
 }
 
@@ -248,4 +279,119 @@ section.itens h1,
 
 #total-reino {
     font-size: 30px;
+}
+
+/* FÓRUM */
+#subtitulo {
+    margin-bottom: 100px;
+    width: 1000px;
+}
+
+#form_postagem label span {
+    font-size: 40px;
+}
+
+#titulo {
+    width: 600px;
+    height: 50px;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 23px;
+}
+
+#textarea_descricao {
+    width: 600px;
+    padding: 15px;
+    font-size: 23px;
+    border-radius: 15px;
+    resize: none;
+}
+
+.all-forum {
+    display: flex;
+}
+
+.second-forum {
+    margin-top: 200px;
+    margin-left: -200px;
+}
+
+.second-forum h1 {
+    width: 800px;
+}
+
+.btn-forum {
+    width: 600px;
+    height: 80px;
+    font-size: 40px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-forum:hover {
+    background-color: white;
+    color: black;
+}
+
+.publicacao {
+    margin-top: 10px;
+    border: 1px solid white;
+    width: 630px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.publicacao span {
+    display: block;
+    font-size: 20px;
+}
+.publicacao-descricao{
+    font-size: 20px;
+}
+
+.publicacao-btn-editar {
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    margin-right: 40px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.publicacao-btn-editar:hover {
+    background-color: rgb(143, 143, 216);
+}
+
+/* EDITAR PUBLICAÇÃO */
+.div-form label {
+    display: block;
+}
+
+.container h1 {
+    font-size: 70px;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 10px;
+    color: white;
+}
+.div-form span{
+    font-size: 40px;
+}
+.div-form label{
+    margin-top: 20px;
+}
+.iput_editar{
+    width: 400px;
+    height: 60px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 30px;
+    background-color: white;
 }

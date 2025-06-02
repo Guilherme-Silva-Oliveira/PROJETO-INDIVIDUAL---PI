@@ -1,2 +1,2 @@
 # PROJETO-INDIVIDUAL---PI
-Projeto Relacionado à God of War Ragnarok
+Este projeto para fins educacionais tem como tema principal o jogo God Of War Ragnarok, no qual é composto em sua base de desenvolvimento por um site informativo que contém a história do jogo, principais elementos e personagens e mapa no qual ocorre a ambientação do jogo, além disso, existe uma tela de login e cadastro, no qual os usuários cadastrem seus perfis de acordo com suas escolhas, além de um quiz também para coleta de informações, além disso, o projeto possui uma dashboard para fins de analisar os dados coletados durante o período de cadastro, além das respostas associadas ao quiz.

@@ -35,7 +35,7 @@
                 <label>E-Mail:</label>
                 <input type="text" id="ipt_email_usuario">
                 <label>Senha:</label>
-                <input type="text" id="ipt_senha_usuario">
+                <input type="password" id="ipt_senha_usuario">
                 <button onclick="entrar()">Entrar</button>
                 <div id="messageerror"></div>
             </div>
@@ -87,6 +87,7 @@
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.FAVORITO_USUARIO = json.favorito;
                     sessionStorage.RACA_USUARIO = json.raca;
+                    sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
                         window.location = "dashboard/dashboard.html";

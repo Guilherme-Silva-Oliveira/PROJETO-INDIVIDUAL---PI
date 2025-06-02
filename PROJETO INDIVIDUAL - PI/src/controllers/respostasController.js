@@ -14,7 +14,7 @@ var respostas = req.body;
     )
       .then(
         function (resultado) {
-            res.json(resultado);
+            res.json({usuario: resultado.insertId});
       }
     ).catch(
         function (erro) {
