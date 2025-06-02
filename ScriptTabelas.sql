@@ -27,7 +27,17 @@ resposta3 varchar(40),
 resposta4 varchar(40),
 resposta5 varchar(40),
 resposta6 varchar(40),
-resposta7 varchar(40)
+resposta7 varchar(40),
+fk_usuario int,
+foreign key fk_usuario(fk_usuario) references Usuarios(idUser)
+);
+
+CREATE TABLE aviso (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	titulo VARCHAR(100),
+	descricao VARCHAR(150),
+	fk_usuario INT,
+	FOREIGN KEY (fk_usuario) REFERENCES Usuarios(idUser)
 );
 
 insert into PerguntaQuiz (enunciado, alt_A, alt_B, alt_C, alt_D) values
@@ -38,17 +48,3 @@ insert into PerguntaQuiz (enunciado, alt_A, alt_B, alt_C, alt_D) values
 ('Qual seu Lema?','Guerra é a Primeira Opção','Manter a Paz a Todo Custo','Confiança é uma Conquista','Salvar Vidas em Primeiro Lugar'),
 ('Qual Reino Gostaria de Visitar?','Svartalfheim Reino dos Anões','Muspelheim Reino do Fogo','Vanaheim Reino dos Deuses Vanir','Asgard Reino dos Deuses Vanir'),
 ('Recomendaria este Jogo para Alguém?','Sim','Não',null,null);
-
-select * from Usuarios;
-select * from RespostaUsuario;
-
-SELECT truncate((select COUNT(resposta7)*100 from RespostaUsuario where resposta7 = "alternativaA") 
-/ COUNT(idRespostaUsuario),0) as totalRecomendacao FROM RespostaUsuario;
-
-SELECT resposta6, COUNT(*) AS escolhas from RespostaUsuario
-group by resposta6 order by resposta6 desc limit 1;
-
-SELECT resposta3, COUNT(*) AS favestilos from RespostaUsuario
-group by resposta3 order by resposta3 desc limit 1;
-
-SELECT resposta4, count(resposta4)
